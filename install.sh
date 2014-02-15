@@ -2,8 +2,8 @@
 
 
 # copy all the setting files over
-cp -v -r .config $HOME/
-cp -v -r home $HOME/
+cp -v -a .config $HOME/
+cp -v -a home/. $HOME/
 
 
 # setup bash settings
