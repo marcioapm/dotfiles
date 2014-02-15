@@ -2,7 +2,7 @@
 
 
 # copy all the setting files over
-cp -v -r config $HOME/.config/
+cp -v -r .config $HOME/
 cp -v -r home $HOME/
 
 
