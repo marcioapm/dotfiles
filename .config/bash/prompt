@@ -110,4 +110,4 @@ set_prompts() {
 }
 
 set_prompts
-unet set_prompts
+unset set_prompts

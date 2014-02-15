@@ -9,7 +9,7 @@ alias sudo="sudo "
 alias ..="cd .."
 alias ...="cd ../.."
 alias ~="cd ~"
-alias --="cd -"
+alias -- -="cd -"
 alias cat="cat -n"
 
 # listing
