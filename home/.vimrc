@@ -44,6 +44,10 @@ map <f2> :NERDTreeToggle<cr>
 map <f5> :GundoToggle<cr>
 map <f4> :IndentGuidesToggle<cr>
 map <silent> <f7> <esc> :w<cr> <esc> :!./%<cr>
+vmap <tab> >gv
+vmap <s-tab> <gv
+nmap <tab> >>
+nmap <s-tab> <<
 
 
 " ui changes
@@ -118,6 +122,8 @@ filetype indent on
 " auto reload .vimrc
 "autocmd BufWritePost  ~/.vimrc source ~/.vimrc
 
+" remove trailing white spaces on save
+autocmd BufWritePre * :%s/\s\+$//e
 
 " auto overrides
 command! Q q
