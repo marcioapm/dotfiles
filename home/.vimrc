@@ -119,11 +119,24 @@ filetype plugin on
 filetype indent on
 
 
+" execute a command and preserve cursor and search history
+function! ExecuteCommand(command)
+  let _s=@/
+  let l = line(".")
+  let c = col(".")
+  execute a:command
+  let @/=_s
+  call cursor(l, c)
+endfunction
+
+
 " auto reload .vimrc
 "autocmd BufWritePost  ~/.vimrc source ~/.vimrc
 
+
 " remove trailing white spaces on save
-autocmd BufWritePre * :%s/\s\+$//e
+autocmd BufWritePre * :ExecuteCommand("%s/\\s\\+$//e")
+
 
 " auto overrides
 command! Q q
