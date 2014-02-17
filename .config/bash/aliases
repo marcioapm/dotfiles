@@ -10,7 +10,7 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ~="cd ~"
 alias -- -="cd -"
-alias cat="cat -n"
+alias catl="cat -n"
 
 # listing
 alias dir="dir --color=auto"

@@ -135,7 +135,7 @@ endfunction
 
 
 " remove trailing white spaces on save
-autocmd BufWritePre * :ExecuteCommand("%s/\\s\\+$//e")
+autocmd BufWritePre * :call ExecuteCommand("%s/\\s\\+$//e")
 
 
 " auto overrides
