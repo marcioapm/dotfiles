@@ -42,3 +42,7 @@ fc-cache -vf $HOME/.fonts
 # install vundle plugins
 vim +BundleInstall +qall
 
+
+echo "\nif your terminal colors didn't change or are incorrect"
+echo "you should open your terminal profile preferences,"
+echo "set colors to custom, and rerun this script\n"

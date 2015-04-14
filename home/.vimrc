@@ -114,6 +114,10 @@ Bundle 'Raimondi/delimitMate'
 Bundle 'sjl/gundo.vim'
 
 
+" editor config
+Bundle 'editorconfig/editorconfig-vim'
+
+
 " required by vundle
 filetype plugin on
 filetype indent on
