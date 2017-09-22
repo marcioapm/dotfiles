@@ -38,6 +38,8 @@ shopt -s histappend
 # case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
 
-                    
+# set tab size to 4
+tabs -4
+
 source $HOME/.config/bash/aliases
 source $HOME/.config/bash/prompt
