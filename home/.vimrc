@@ -32,6 +32,12 @@ set t_Co=256
 syntax on
 
 
+" write temp files in /tmp
+set backupdir=/tmp//
+set directory=/tmp//
+set undodir=/tmp//
+
+
 " keybinds
 set pastetoggle=<f3>
 map <silent> <f7> <esc> :w<cr> <esc> :!./%<cr>
