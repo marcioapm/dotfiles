@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # use vim as the default editor
 export EDITOR="vim"
 
@@ -40,6 +38,9 @@ shopt -s nocaseglob
 
 # set tab size to 4
 tabs -4
+
+# add $HOME/bin to path
+export PATH=$HOME/bin:$PATH
 
 source $HOME/.config/bash/aliases
 source $HOME/.config/bash/prompt

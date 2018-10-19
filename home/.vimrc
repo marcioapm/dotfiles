@@ -32,17 +32,8 @@ set t_Co=256
 syntax on
 
 
-" temp directories
-set undodir=$HOME/.vim/undo
-set backupdir=$HOME/.vim/backup
-set directory=$HOME/.vim/swap
-
-
 " keybinds
 set pastetoggle=<f3>
-map <f2> :NERDTreeToggle<cr>
-map <f5> :GundoToggle<cr>
-map <f4> :IndentGuidesToggle<cr>
 map <silent> <f7> <esc> :w<cr> <esc> :!./%<cr>
 vmap <tab> >gv
 vmap <s-tab> <gv
@@ -54,94 +45,10 @@ nmap <s-tab> <<
 set cursorline
 set laststatus=2
 
-
-" bundles
-" -------
-
-" vundle
-filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-Bundle 'gmarik/vundle'
-
-
-" NERDtree - directory browsing
-Bundle 'scrooloose/nerdtree'
-
-
-" syntastic - syntax checker
-Bundle 'scrooloose/syntastic'
-
-
-" solarized - color theme
-Bundle 'altercation/vim-colors-solarized'
-set background=light
-let g:solarized_termtrans=1
-let g:solarized_termcolors=256
-colorscheme solarized
-
 if has("gui_running")
     set mousefocus
 endif
 
 
-" indent guides
-Bundle 'nathanaelkane/vim-indent-guides'
-let g:indent_guides_auto_colors=1
-let g:indent_guides_space_guide=1
-let g:indent_guides_guide_size=1
-let g:indent_guides_color_change_percent=30
-let g:indent_guides_enable_on_vim_startup=1
-let g:indent_guides_start_level=2
-let g:indent_guides_exclude_filetypes=['help', 'nerdtree']
-
-
-" fugitive - git integration
-Bundle 'tpope/vim-fugitive'
-
-
-" airline - status bar
-Bundle 'bling/vim-airline'
-let g:airline_powerline_fonts=1
-
-
-" delimitMate - matches brackers, ...
-Bundle 'Raimondi/delimitMate'
-
-
-" gundo - easy undo
-Bundle 'sjl/gundo.vim'
-
-
-" editor config
-Bundle 'editorconfig/editorconfig-vim'
-
-
-" required by vundle
-filetype plugin on
-filetype indent on
-
-
-" execute a command and preserve cursor and search history
-function! ExecuteCommand(command)
-  let _s=@/
-  let l = line(".")
-  let c = col(".")
-  execute a:command
-  let @/=_s
-  call cursor(l, c)
-endfunction
-
-
-" auto reload .vimrc
-"autocmd BufWritePost  ~/.vimrc source ~/.vimrc
-
-
 " remove trailing white spaces on save
 autocmd BufWritePre * :call ExecuteCommand("%s/\\s\\+$//e")
-
-
-" auto overrides
-command! Q q
-command! W w
