@@ -22,3 +22,6 @@ if [ -x /usr/bin/dircolors ] || [ -x /bin/dircolors ]; then
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 fi
+
+# copy stdin to clipboard
+alias xclip="xclip -sel clip"
