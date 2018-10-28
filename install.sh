@@ -123,9 +123,10 @@ __install_home() {
 }
 
 __install_bin() {
+    local dir="$(__install_dir)"
     echo "=> installing bin directory..."
     mkdir -p $HOME/bin
-    cp -vau $dir/bin/* $HOME/bin
+    cp -Rvau $dir/bin/. $HOME/bin/
 }
 
 __install() {
@@ -139,6 +140,7 @@ __install() {
 
   __clone_dotfiles
   __install_home
+  __install_bin
   __ensure_profile
   __change_profile
 
