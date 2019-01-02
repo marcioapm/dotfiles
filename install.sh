@@ -122,13 +122,6 @@ __install_home() {
     cp -Rvau $dir/home/. $HOME/
 }
 
-__install_bin() {
-    local dir="$(__install_dir)"
-    echo "=> installing bin directory..."
-    mkdir -p $HOME/bin
-    cp -Rvau $dir/bin/. $HOME/bin/
-}
-
 __install() {
   if ! __has git; then
     echo >&2 "=> you need git to install"
@@ -140,7 +133,6 @@ __install() {
 
   __clone_dotfiles
   __install_home
-  __install_bin
   __ensure_profile
   __change_profile
 
@@ -148,7 +140,7 @@ __install() {
 }
 
 __install
-unset __install __clone_dotfiles __install_home __install_bin __change_profile __ensure_line_regex __ensure_line  \
+unset __install __clone_dotfiles __install_home __change_profile __ensure_line_regex __ensure_line  \
     __ensure_profile __detect_profile __install_dir __script_path __has __is_linux __is_darwin __os
 
 } # this ensures the entire script is downloaded #
