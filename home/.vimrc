@@ -52,9 +52,9 @@ set cursorline
 set laststatus=2
 
 if has("gui_running")
-    set mousefocus
+  set mousefocus
 endif
 
 
 " remove trailing white spaces on save
-autocmd BufWritePre * :call ExecuteCommand("%s/\\s\\+$//e")
+au BufWritePre * %s/\s\+$//e
